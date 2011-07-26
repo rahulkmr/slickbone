@@ -15,7 +15,7 @@ class SlickBone.Collection extends Backbone.Collection
     
     @grid.onCellChange.subscribe (event, args) =>
       modelToUpdate = if args.item.id? then @get(args.item.id) else @getByCid(args.item.cid)
-      modelToUpdate.set(args.item)
+      modelToUpdate.save(args.item)
     
     @grid.onAddNewRow.subscribe (event, args) => @add(args.item)
 
